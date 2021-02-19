@@ -15,8 +15,8 @@ myEngine = Engine.create();
 myWorld = myEngine.world 
 //json
 var groundOptions = {
-  isStatic : true 
-}
+isStatic : true 
+} 
 ground = Bodies.rectangle(200,380,400,20,groundOptions);
 World.add(myWorld,ground);
 console.log(ground.isStatic);
@@ -24,14 +24,15 @@ console.log(ground.isStatic);
 //json
 var ballOptions = {
   restitution : 1.0 
-}
-ball = Bodies.circle(200,200,25);
+} 
+ball = Bodies.circle(200,200,25,ballOptions);
 World.add(myWorld,ball);
-//console.log(ball);
+console.log(ball);
 }
 
 function draw() {
-  background("black");  
+  background("black"); 
+  Engine.update(myEngine); 
   rectMode(CENTER);
   rect (ground.position.x,ground.position.y,400,20);
  // rect (200,200,50,50);
